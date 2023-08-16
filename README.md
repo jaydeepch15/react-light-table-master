@@ -69,7 +69,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-### How to create react comonent as package
+### How to create react comonent as package.
 
 https://levelup.gitconnected.com/publish-react-components-as-an-npm-package-7a671a2fb7f
 
