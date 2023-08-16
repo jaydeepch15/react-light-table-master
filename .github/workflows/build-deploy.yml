@@ -27,14 +27,16 @@ jobs:
       #   run: npm test
 
       - name: Deploy on Remote Server
-        uses: appleboy/ssh-action@v0.1.7
+        uses: appleboy/ssh-action
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
-            cd ~/home/opc/v2
+            cd /home/opc/v2
+            pwd
+            whoami
             git pull origin master
             git status
             npm install
