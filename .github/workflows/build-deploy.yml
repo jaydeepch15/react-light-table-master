@@ -2,20 +2,21 @@ name: Deploy to Oracle VM Server
 
 on:
   push:
-    branches: [main, master] # Or the branch you want to trigger deployment from
+    branches: [jd] # Or the branch you want to trigger deployment from
 
 jobs:
-  deploy:
+  build-node:
     runs-on: ubuntu-latest
+    container: node:16
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16.x"
+      # - name: Install Node.js
+      #   uses: actions/setup-node@v2
+      #   with:
+      #     node-version: "16.x"
 
       - name: Install dependencies
         run: npm install
