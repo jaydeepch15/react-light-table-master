@@ -24,7 +24,7 @@ jobs:
         run: npm run build
 
       - name: List files in source directory
-        run: ls -lah
+        run: pwd
 
       # - name: Test Build
       #   run: npm test
