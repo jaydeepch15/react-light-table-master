@@ -26,7 +26,7 @@ jobs:
       - name: Get source path
         id: get_source_path
         run: |
-          echo "::set-output name=source_path::$(pwd)" 
+          echo "source_path=$(pwd)" >> $GITHUB_ENV  
 
       - name: Test Build
         run: npm test
@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: ${{ steps.get_source_path.outputs.source_path }}/*
+          source: ${{ env.source_path }}/*
           target: "/home/opc/v2/"
 
 
