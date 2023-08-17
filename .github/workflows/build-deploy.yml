@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: "/home/opc/react-light-table-master"
+          source: "/home/opc/react-light-table-master/"
           target: "/home/opc/v2"
 
 
