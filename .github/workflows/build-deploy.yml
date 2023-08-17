@@ -24,20 +24,20 @@ jobs:
         run: npm run build
 
       - name: List files in source directory
-        run: ls /home/opc/react-light-table-master/
+        run: ls -lah
 
       # - name: Test Build
       #   run: npm test
 
-      - name: Deploy on Remote Server
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_KEY }}
-          port: 22
-          source: "react-light-table-master/*"
-          target: "/home/opc/v2/"
+      # - name: Deploy on Remote Server
+      #   uses: appleboy/scp-action@master
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     key: ${{ secrets.SSH_KEY }}
+      #     port: 22
+      #     source: "react-light-table-master/*"
+      #     target: "/home/opc/v2/"
 
 
       # - name: Deploy on Remote Server
