@@ -23,6 +23,9 @@ jobs:
       - name: Build React app
         run: npm run build
 
+      - name: List files in source directory
+        run: ls /home/opc/react-light-table-master/
+
       # - name: Test Build
       #   run: npm test
 
@@ -33,8 +36,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: "/home/opc/react-light-table-master/*"
-          target: "/home/opc/v2"
+          source: "react-light-table-master/*"
+          target: "/home/opc/v2/"
 
 
       # - name: Deploy on Remote Server
