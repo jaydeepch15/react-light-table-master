@@ -1,8 +1,8 @@
-name: Deploy to Oracle VM Server
+name: Build and Deploy Node App
 
 on:
   push:
-    branches: [jd] # Or the branch you want to trigger deployment from
+    branches: [jd] # The branch you want to trigger deployment from
 
 jobs:
   deploy:
@@ -23,8 +23,10 @@ jobs:
       - name: Build React app
         run: npm run build
 
-      - name: List files in source directory
-        run: pwd  #To get souce patch for SCP
+      - name: Get source path
+        id: get_source_path
+        run: |
+          echo "::set-output name=source_path::$(pwd)" 
 
       - name: Test Build
         run: npm test
@@ -36,7 +38,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.SSH_KEY }}
           port: 22
-          source: "/home/runner/work/react-light-table-master/react-light-table-master/*"
+          source: ${{ steps.get_source_path.outputs.source_path }}/*
           target: "/home/opc/v2/"
 
 
